@@ -1,0 +1,20 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Spring Boot Web Upload and Resize Images</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Choose an image file to upload and resize.</h1>
+    <p class="text-danger" th:if="${errorMessage}" th:text="${errorMessage}"></p>
+    <p class="text-success" th:if="${successMessage}" th:text="${successMessage}"></p>
+    <form method="POST" enctype="multipart/form-data" action="/uploadImage">
+        <div class="form-group">
+            <label for="image">File to upload</label>
+            <input type="file" class="form-control-file" id="image" name="image" >
+        </div>
+        <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+</div>
+</body>
+</html>
